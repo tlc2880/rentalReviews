@@ -11,7 +11,7 @@ $(document).ready(function(){
       type:'DELETE',
       url: '/articles/'+id,
       success: function(response){
-        alert('Deleting Article');
+        alert('Deleting Review');
         window.location.href='/';
       },
       error: function(err){
