@@ -5,10 +5,11 @@
 extends layout
 
 block content
-  h1= article.title
+  h4 Title: #{article.title}
   h5 Written by #{author}
+  h5 Checkin: #{article.checkin}  
   h5 Star number: #{article.star}
-  p= article.body
+  p Comment: #{article.body}
   hr
   if user
     if user.id ==article.author
