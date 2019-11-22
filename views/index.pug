@@ -1,0 +1,12 @@
+//- Name: Tommy Cao
+//- Date: 5/29/17
+//- Company: GEVH
+//- Description: Great Entertainment Vacation Rental Website
+extends layout
+
+block content
+  h1 #{title}
+  ul.list-group
+    each article, i in articles
+      li.list-group-item
+        a(href="/articles/"+article._id)= article.title
