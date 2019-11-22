@@ -15,6 +15,10 @@ let articleSchema = mongoose.Schema({
     type: String,
     required: true
   },
+  checkin:{
+    type: String,
+    required: true
+  },   
   star:{
     type: String,
     required: true
@@ -25,4 +29,4 @@ let articleSchema = mongoose.Schema({
   }
 });
 
-let Article = module.exports = mongoose.model('Article', articleSchema);
+let Article = module.exports = mongoose.model('Articles', articleSchema);
