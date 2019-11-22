@@ -14,7 +14,7 @@ let User = require('../models/user');
 // Add Route
 router.get('/add', ensureAuthenticated, function(req, res){
   res.render('add_article', {
-    title:'Add Article'
+    title:'Add Review'
   });
 });
 
@@ -22,20 +22,21 @@ router.get('/add', ensureAuthenticated, function(req, res){
 router.post('/add', function(req, res){
   req.checkBody('title','Title is required').notEmpty();
   //req.checkBody('author','Author is required').notEmpty();
-  req.checkBody('body','Body is required').notEmpty();
+  req.checkBody('body','Comment is required').notEmpty();
 
   // Get Errors
   let errors = req.validationErrors();
 
   if(errors){
     res.render('add_article', {
-      title:'Add Article',
+      title:'Add Review',
       errors:errors
     });
   } else {
     let article = new Article();
     article.title = req.body.title;
     article.author = req.user._id;
+    article.checkin = req.body.checkin;    
     article.star = req.body.star;    
     article.body = req.body.body;
 
@@ -44,7 +45,7 @@ router.post('/add', function(req, res){
         console.log(err);
         return;
       } else {
-        req.flash('success','Article Added');
+        req.flash('success','Review Added');
         res.redirect('/');
       }
     });
@@ -59,7 +60,7 @@ router.get('/edit/:id', ensureAuthenticated, function(req, res){
       return res.redirect('/');
     }
     res.render('edit_article', {
-      title:'Edit Article',
+      title:'Edit Review',
       article:article
     });
   });
@@ -70,6 +71,7 @@ router.post('/edit/:id', function(req, res){
   let article = {};
   article.title = req.body.title;
   article.author = req.body.author;
+  article.checkin = req.body.checkin;  
   article.star = req.body.star;
   article.body = req.body.body;
 
@@ -80,7 +82,7 @@ router.post('/edit/:id', function(req, res){
       console.log(err);
       return;
     } else {
-      req.flash('success', 'Article Updated');
+      req.flash('success', 'Review Updated');
       res.redirect('/');
     }
   });
