@@ -12,13 +12,18 @@ block content
       label Title:
       input.form-control(name='title', type='text', value=article.title)
     #form-group
-    label Author:
-      input.form-control(name='author', type='text', value=article.author)
+      input.form-control(name='author', type='hidden', value=article.author)      
     #form-group
-    label Star:
+      label Renter:
+      input.form-control(name='renter',  type='text', value=article.renter)
+    #form-group
+      label Stayed:
+      input.form-control(name='checkin', type='text', value=article.checkin)      
+    #form-group
+      label Star:
       input.form-control(name='star', type='num', value=article.star)
     #form-group
-      label Body:
+      label Comment:
       textarea.form-control(name='body')= article.body
     br
     input.btn.btn-primary(type='submit',value='Submit')

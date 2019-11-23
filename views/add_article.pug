@@ -9,10 +9,13 @@ block content
   h1 #{title}
   form(method='POST', action='/articles/add')
     #form-group
+      label Renter:
+      input.form-control(name='renter', type='text')    
+    #form-group
       label Title:
       input.form-control(name='title', type='text')
     #form-group
-      label Checkin:
+      label Stayed:
       input.form-control(name='checkin', type='text')      
     #form-group
       label Star:

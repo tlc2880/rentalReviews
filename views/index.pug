@@ -8,5 +8,9 @@ block content
   h1 #{title}
   ul.list-group
     each article, i in articles
-      li.list-group-item
+      .list-item
         a(href="/articles/"+article._id)= article.title
+        h5 Renter: #{article.renter}
+        h5 Stayed: #{article.checkin}  
+        h5 Star number: #{article.star}
+        p Comment: #{article.body}
