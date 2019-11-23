@@ -21,8 +21,9 @@ router.get('/add', ensureAuthenticated, function(req, res){
 // Add Submit POST Route
 router.post('/add', function(req, res){
   req.checkBody('title','Title is required').notEmpty();
-  //req.checkBody('author','Author is required').notEmpty();
+  req.checkBody('checkin','Checkin is required').notEmpty();
   req.checkBody('body','Comment is required').notEmpty();
+  req.checkBody('star','Star is required').notEmpty();
 
   // Get Errors
   let errors = req.validationErrors();
@@ -36,7 +37,8 @@ router.post('/add', function(req, res){
     let article = new Article();
     article.title = req.body.title;
     article.author = req.user._id;
-    article.checkin = req.body.checkin;    
+    article.checkin = req.body.checkin;
+    article.renter = req.body.renter;  
     article.star = req.body.star;    
     article.body = req.body.body;
 
@@ -71,7 +73,8 @@ router.post('/edit/:id', function(req, res){
   let article = {};
   article.title = req.body.title;
   article.author = req.body.author;
-  article.checkin = req.body.checkin;  
+  article.checkin = req.body.checkin;
+  article.renter = req.body.renter;  
   article.star = req.body.star;
   article.body = req.body.body;
 
