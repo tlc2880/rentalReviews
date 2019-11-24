@@ -15,6 +15,10 @@ let articleSchema = mongoose.Schema({
     type: String,
     required: true
   },
+  renter:{
+    type: String,
+    required: true
+  },
   checkin:{
     type: String,
     required: true
