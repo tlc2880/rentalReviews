@@ -14,29 +14,29 @@
 
 Website features:
 1.  Main Review page
-	A. Shows review by all authors
-	B. Review title links to review display page.  Authors have option of edit and delete review.
+    A. Shows review by all authors
+    B. Review title links to review display page.  Authors have option of edit and delete review.
 2.  Sign up page 
-	A. Error processing:
-		i. Name, Email, Username, and Password are required
-		ii. Email is not valid
-		iii. Passwords do not match
-	B. You are now registered and can log in success message
+    A. Error processing:
+	i. Name, Email, Username, and Password are required
+	ii. Email is not valid
+	iii. Passwords do not match
+    B. You are now registered and can log in success message
 3.  Login page using created user and password
     A. Error processing:
         i. No user found
         ii. Wrong password
     B. Login success message
 4.  Add Review page
-	A.	Error processing: Review article title, Renter name, Checkin date, Review comment, & Star rating are required.
-	B.	Review add success message
-5.	Review Display page
-	A.	Edit and delete buttons are displayed only for review article owner, i.e. only review owners are allowed to edit and delete its reviews.
-	B.	Delete review success message
-6.	Edit Review page
-	A.	Error processing: Review Article Title, Renter Name, Checkin Date, Review Comment, & Star Rating are required.
-	B.	Review Updated success message
-7.	Logout message
+    A.	Error processing: Review article title, Renter name, Checkin date, Review comment, & Star rating are required.
+    B.	Review add success message
+5. Review Display page
+    A.	Edit and delete buttons are displayed only for review article owner, i.e. only review owners are allowed to edit and delete its reviews.
+    B.	Delete review success message
+6. Edit Review page
+    A.	Error processing: Review Article Title, Renter Name, Checkin Date, Review Comment, & Star Rating are required.
+    B.	Review Updated success message
+7. Logout message
 
 This full stack website is hosted at DigitalOcean using Virtual Private Server (VPS) droplet.  SSH security is used for account.
 Here is the link to the website, http://gevh1.com.
